@@ -14,10 +14,6 @@ const client = new pg.Client({
 client.connect();
 
 const queryType = process.argv.slice(2)[0];
-// let id = null
-// let first_name = null;
-
-
 client.query("SELECT * FROM famous_people WHERE (first_name =$1 OR last_name =$1)", [queryType], (err, res) => {
   if (err) {
     console.log("ERR:", err)

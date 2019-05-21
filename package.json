@@ -1,0 +1,19 @@
+{
+  "name": "week_4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lookup_people.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gaganpandher52/postgreSQL.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gaganpandher52/postgreSQL/issues"
+  },
+  "homepage": "https://github.com/Gaganpandher52/postgreSQL#readme"
+}
