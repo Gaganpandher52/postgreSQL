@@ -14,19 +14,17 @@ const client = new pg.Client({
 client.connect();
 
 const queryType = process.argv.slice(2)[0];
-let id = null
-if (queryType === "read" || queryType === "delete" || queryType === "update") {
-  id = process.argv.slice(2)[1]
-}
+// let id = null
+// let first_name = null;
 
-if (queryType === "list") {
-  client.query("SELECT * FROM famous_people", (err, res) => {
-    if (err) {
 
-      console.log("ERR:", err)
-        return false
-      }
-    console.log(res.rows)
-      client.end()
-  })
-}
+client.query("SELECT * FROM famous_people WHERE (first_name =$1 OR last_name =$1)", [queryType], (err, res) => {
+  if (err) {
+    console.log("ERR:", err)
+      return false
+  }
+  console.log('Searching...')
+  console.log(res.rows)
+  client.end()
+})
+
